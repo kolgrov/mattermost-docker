@@ -13,19 +13,19 @@ Note:
 
 Bring down the stack:
 
-```docker-compose down```
+`docker-compose down`
 
 Fetch updates from upstream repository:
 
-```git fetch upstream/master```
+`git fetch upstream/master`
 
 Make sure that you are at the applicable local branch (most likely master), and merge the fetched local upstream branch into local master branch:
 
-```git checkout master```
-```git merge upstream/master```
+`git checkout master`  
+`git merge upstream/master`
 
 Solve any merge conflicts.
 Rebuild the app from the dockerfile and spin up the containers:
 
-```docker-compose build```
-```docker-compose up -d``` (Drop -d if you would like see debug in terminal)
+`docker-compose build`  
+`docker-compose up -d` (Drop -d to get printf's in terminal)
