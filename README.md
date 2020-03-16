@@ -25,6 +25,18 @@ Make sure that you are at the applicable local branch (most likely master), and 
 `git merge upstream/master`
 
 Solve any merge conflicts.
+
+Typical merge conflict in docker_compose file:
+To install the team edition, change `build: app` to `build:` and uncomment out these lines in `app:` services block to make it look like below in docker-compose.yaml file:
+```yaml
+app:
+  build:
+    context: app
+    args:
+      - edition=team
+```
+The `app` Dockerfile will read the `edition` build argument to install Team (`edition = 'team'`) or Enterprise (`edition != team`) edition.
+
 Rebuild the app from the dockerfile and spin up the containers:
 
 `docker-compose build`  
